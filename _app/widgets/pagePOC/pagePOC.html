@@ -1,0 +1,34 @@
+{{#unless noContact}}
+<div id="tek-page-poc" class="tek-global-poc">
+    {{#if PictureURL}}
+    <div class="photo">
+        <img src="{{PictureURL}}" width="160">
+    </div>
+    {{/if}}
+    <ul>
+    {{#if PreferredName}}
+        <li><label>Name:</label> {{PreferredName}}</li>
+    {{/if}}
+    {{#if WorkEmail}}
+        <li><label>Email:</label> <a href="mailto:{{WorkEmail}}">{{WorkEmail}}</a></li>
+    {{/if}}
+    {{#if WorkPhone}}
+        <li><label>Phone:</label> {{WorkPhone}}</li>
+    {{/if}}
+    {{#unless NoLocation}}
+        {{#if FullLocation}}
+        <li><label>Location:</label> {{City}}, {{State}}</li>
+        {{/if}}
+        {{#if CityOnly}}
+        <li><label>Location:</label> {{City}}</li>
+        {{/if}}
+        {{#if StateOnly}}
+        <li><label>Location:</label> {{State}}</li>
+        {{/if}}
+    {{/unless}}
+    </ul>
+</div>
+{{/unless}}
+{{#if noContact}}
+<span>There is no contact set for this page.</span>
+{{/if}}
